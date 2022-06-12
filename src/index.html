@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/dist/output.css" rel="stylesheet">
+    <title>TO DO List</title>
+</head>
+<body class="font-mono">
+    <div id="app" class="myCountainer">
+        <div class="p-8">
+            <div class="flex justify-center border rounded-md">
+                <input type="text" v-model="title" @keypress.enter="addTask" placeholder="Enter the task">
+                <button @click="addTask">+</button>
+            </div>
+            <div v-for="(todo, id) in todos" class="flex justify-between border rounded-md m-8 p-8">
+                <span id="str" class="text-4xl text-gray-500 ml-2">{{id+1}}.{{todo.title}}</span>
+                <div @click="removeTask(id)" class="cursor-pointer"><img src="close.png" alt="del"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+<!--v-model="title" === v-bind:value="title" @input="title = $event.target.value"-->

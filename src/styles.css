@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    button {
+        @apply bg-lime-500 rounded text-white text-5xl font-black w-12 h-12 m-8 hover:bg-lime-600
+    }
+    input {
+        @apply h-12 w-11/12 m-8 text-2xl
+    }
+}
+
+@layer components {
+    .myCountainer{
+        @apply container mx-auto px-4 bg-white w-8/12 m-8 border
+    }
+}
